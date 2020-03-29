@@ -4,9 +4,9 @@
   "description": "workout app api for exercises and workouts",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "sequelize": "^5.21.5",
-    "sqlite3": "^4.1.1"
+    "sequelize": "^5.21.5"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -15,9 +15,15 @@
     "prettier": "^2.0.2"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   },
   "author": "isolation bois",
   "license": "MIT"
